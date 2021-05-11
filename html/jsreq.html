@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>
+         jsreq
+      </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+      <link rel="icon" href="favicon.ico" />
+      <link rel="stylesheet" type="text/css" href="../css/styles.css">
+      <script src="../js/table.js"></script>
+   </head>
+   <body id="bodyid2" style="background-color: #ccf5ff" onload="myfunc()" >
+   	<div class="topnav">
+		<a href="../html/index.html">Home</a>
+		<a href="../html/contact.html">Contact</a>
+		<a class="active" href="../html/jsreq.html">JS requirements</a>
+		<a href="../html/galleria.html">Galleria</a>
+   </div>
+   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button
+  var mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
+     <!--  <div class="stik">
+         <h2><a class="hom" href="../html/index.html" onmouseover="this.style.color='#ea2323'" onmouseout="this.style.color='#c91818'">HOME</a></h2>
+      </div> -->
+      <br><br>
+      <h1>
+         <center>Js Requirements</center>
+      </h1>
+      <!-- <h4>1. &emsp; Like Counter</h4>
+      <button id="like" onclick="add()">LIKE</button>
+      <p>Likes: <span  id="lik"></span></p> -->
+      <h4> &emsp; Skill Table</h4>
+      <form id="myform">
+         NAME : <input type="text" id="name" name="name" value=" " required><br><br>
+         SKILL : <input type="text" id="skill" name="skill" value=" " required><br><br>
+         LEVEL : 
+         <select name="level" id="level">
+            <option value="Proficient">Proficient</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Beginner">Beginner</option>
+         </select>
+         <br><br>
+         COMMENT : <input type="text" id="comment" name="comment" value=" " required><br><br>
+         <br><br>
+      </form>
+      <button onclick="SaveItem()">Submit</button><br><br><br>
+      <table id="tableid" border="solid" align="center" width="75%">
+         <tr>
+            <th>Name</th>
+            <th>Skill</th>
+            <th>Level</th>
+            <th>Comment</th>
+         </tr>
+      </table>
+      <br>
+      <p id="tp"></p>
+      <br>
+      
+      <script>
+         
+         function append() {
+         var newName=document.getElementById("myform").elements[0].value;
+         var newSkill=document.getElementById("myform").elements[1].value;
+         var newLevel=document.getElementById("myform").elements[2].value;
+         var newCOMMENT=document.getElementById("myform").elements[3].value;
+         
+         var tableRef = document.getElementById("tableid");
+         
+         // Insert a row at the end of the table
+         var newRow = tableRef.insertRow(-1);
+         
+         // Insert a cell in the row at index 0
+         var newCell = [newRow.insertCell(0), newRow.insertCell(1), newRow.insertCell(2), newRow.insertCell(3)];
+         
+         // Append a text node to the cell
+         var newText = [document.createTextNode(newName), document.createTextNode(newSkill), document.createTextNode(newLevel), document.createTextNode(newCOMMENT)];
+         var i;
+         for(i=0;i<4;++i)
+         newCell[i].appendChild(newText[i]);
+         
+         }
+         
+         
+      </script>
+   </body>
+</html>
